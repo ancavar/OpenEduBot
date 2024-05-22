@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Опции</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Меню загрузки ответов</h1>
+    <div class="upload-section">
+      <label for="json-file" class="custom-file-label">Выбрать файл</label>
+      <input type="file" id="json-file" accept=".json" hidden>
+      <button id="upload-button">Загрузить</button>
+    </div>
+    <div id="upload-result" class="upload-result"></div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

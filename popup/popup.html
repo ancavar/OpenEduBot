@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Panel</title>
+    <style>
+        body {
+            background-image: url('../images/vzlom.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100px;
+        }
+
+        button {
+            background-color: transparent;
+            color: white;
+            font-family: 'Lobster';
+            font-size: 15px;
+            z-index: 10;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <button id="toggle">взлом</button>
+    <script src="popup.js"></script>
+</body>
+</html>
