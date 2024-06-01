@@ -32,7 +32,7 @@
     "page": "options/options.html",
     "open_in_tab": true
   },
-  "permissions": ["tabs", "scripting", "activeTab", "storage"],
+  "permissions": ["tabs", "scripting", "activeTab", "storage", "notifications"],
 
   "web_accessible_resources": [
     {

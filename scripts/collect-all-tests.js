@@ -45,6 +45,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
             while (newSequentialBlockId === currentSequentialBlockId) {
                 let button = document.querySelector('.next-btn.btn.btn-link');
                 if (button.disabled) {
+                    // todo: enums
+                    chrome.runtime.sendMessage({checked: 0, total: 0})
                     return
                 }
                 button.click()
