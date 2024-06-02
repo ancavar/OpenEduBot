@@ -1,13 +1,13 @@
 chrome.runtime.onMessage.addListener(async function (request, sender, sendResponse) {
-    if (request.checked === 0) {
+    if (request.checkedAnswers >= 0 && request.done === undefined) {
         notifyResultsToUser(request)
     }
     chrome.tabs.sendMessage(sender.tab.id, request);
 });
 
 function notifyResultsToUser(results){
-    const checked = results.checked
-    const total = results.total
+    const checked = results.checkedAnswers
+    const total = results.totalQuestions
     chrome.notifications.create(
         "completed-course",
         {

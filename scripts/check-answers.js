@@ -1,6 +1,5 @@
 function checkAnswers() {
     let problemWrappers = document.querySelectorAll('.wrapper-problem-response');
-
     let legends = document.querySelectorAll('legend');
     let questionTexts;
 
@@ -13,7 +12,11 @@ function checkAnswers() {
         })
     }
 
+    let checkedAnswers = 0
+    let totalQuestions = 0
+
     questionTexts.forEach((question, index) => {
+        totalQuestions++
         chrome.storage.local.get(question, (obj) => {
             let answers = obj[question];
             if (answers) {
@@ -23,6 +26,7 @@ function checkAnswers() {
                 answers.forEach(answerText => {
                     let label = Array.from(fieldset.querySelectorAll('label')).find(label => label.textContent.trim() === answerText);
                     if (label && label.htmlFor) {
+                        checkedAnswers++
                         let input = fieldset.querySelector(`#${label.htmlFor}`);
                         if (input) {
                             input.checked = true;
@@ -35,7 +39,7 @@ function checkAnswers() {
         });
     });
     //todo: response
-    chrome.runtime.sendMessage({done: true})
+    chrome.runtime.sendMessage({done: true, checkedAnswers, totalQuestions })
 }
 
 function submitAnswers() {
